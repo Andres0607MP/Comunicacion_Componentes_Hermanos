@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #0f1724; /* fondo principal oscuro */
+  --secondary-color: rgba(255,255,255,0.04); /* paneles translúcidos */
+  --accent-color: #ff6b35; /* naranja vibrante */
+  --muted-color: #9aa4b2;
+  --text-color: #e6eef6;
+  --border-color: rgba(255,255,255,0.06);
+  --glass-bg: rgba(255,255,255,0.03);
+  --shadow-strong: 0 10px 30px rgba(2,6,23,0.6);
+}
+
+.layout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(255,107,53,0.06), transparent 10%), linear-gradient(180deg, #071021 0%, #0f1724 100%);
+  color: var(--text-color);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Barra interactiva - izquierda vertical */
+app-barra-interaccion {
+  flex-shrink: 0;
+  order: 1;
+  width: 96px;
+  border-right: 1px solid transparent;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  padding-top: 18px;
+}
+
+/* Barra de navegación - centro vertical */
+app-barra-navegacion {
+  flex-shrink: 0;
+  order: 2;
+  width: 260px;
+  border-right: 1px solid transparent;
+  background: linear-gradient(180deg, rgba(255,255,255,0.015), transparent);
+  box-shadow: var(--shadow-strong);
+}
+
+/* Contenido principal - derecha expandible */
+.contenido-principal {
+  flex: 1;
+  order: 3;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  overflow-y: auto;
+
+  router-outlet {
+    display: contents;
+  }
+}
+

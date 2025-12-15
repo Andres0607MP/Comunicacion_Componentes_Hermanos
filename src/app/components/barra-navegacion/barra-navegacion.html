@@ -1,0 +1,15 @@
+﻿<div class="barra-navegacion">
+  <h3 class="titulo">{{ titulo }}</h3>
+  <small class="categoria-actual">Sección actual: {{ categoria }}</small>
+
+  <ul class="opciones-lista">
+    <li *ngFor="let op of opciones" [class.funcional]="op.funcional" [class.visual]="!op.funcional">
+      <a (click)="navegar(op)"
+         [class.activa]="esActivo(op)"
+         [class.no-funcional]="!op.funcional"
+         class="opcion">
+         {{ op.label }}
+      </a>
+    </li>
+  </ul>
+</div>

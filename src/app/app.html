@@ -1,0 +1,14 @@
+﻿<div class="layout">
+  <app-barra-interaccion
+    [categoriaActual]="categoriaActual"
+    (categoriaSeleccionada)="actualizarCategoria($event)">
+  </app-barra-interaccion>
+
+  <app-barra-navegacion
+    [categoria]="categoriaActual">
+  </app-barra-navegacion>
+
+  <div class="contenido-principal">
+    <router-outlet></router-outlet>
+  </div>
+</div>
